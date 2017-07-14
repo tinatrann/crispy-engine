@@ -1,0 +1,77 @@
+#include <Servo.h>
+
+Servo servoLeft;
+Servo servoRight;
+
+int led = 11;
+
+void setup()                                 // Built-in initialization block
+{
+  pinMode(7, INPUT);                         // Set right whisker pin to input
+  pinMode(5, INPUT);                         // Set left whisker pin to input  
+  pinMode (led, OUTPUT) ;
+  Serial.begin(9600);  
+  servoLeft.attach(13);
+  servoRight.attach(12);
+  
+  // Set data rate to 9600 bps (i.e. 
+                                             // the reason why the numbers are so fast.
+}  
+
+ 
+void loop()                                  // Main loop auto-repeats
+{                                            
+  byte wLeft = digitalRead(5);               // Copy left result to wLeft  
+  byte wRight = digitalRead(7); 
+  // Copy right result to wRight
+  if (wLeft == 1) {
+    servoLeft.writeMicroseconds(1700);
+    servoRight.writeMicroseconds(1300);
+    delay(100);
+  }
+  else if  (wLeft == 0) {
+    servoLeft.writeMicroseconds(1700);
+    servoRight.writeMicroseconds(1700);
+    delay(100);
+  }
+
+   if (wRight == 1) {
+    servoLeft.writeMicroseconds(1700);
+    servoRight.writeMicroseconds(1300);
+    delay(100);
+  }
+  else if  (wRight == 0) {
+    servoLeft.writeMicroseconds(1300);
+    servoRight.writeMicroseconds(1300);
+    delay(100);
+  }
+  if (wRight == 0 && wLeft == 0) {
+    servoLeft.writeMicroseconds(1300);
+    servoRight.writeMicroseconds (1700);
+    delay(100);
+  }
+  if (wRight == 0) {
+    Serial.println("Right whisker in contact");
+  }
+  if (wLeft == 0) {
+    Serial.println("Left whisker in contact");
+  }
+
+  delay (50);
+
+  if (wLeft == 0 && wRight ==0 ) {
+    digitalWrite (led, HIGH);
+    delay(1000);
+    digitalWrite(led, LOW);
+    delay(1000);
+  
+
+} else {
+   digitalWrite (led,LOW);
+   delay(1000);
+}
+   
+
+
+}
+                                // Pause for 50 ms
