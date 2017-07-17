@@ -9,6 +9,24 @@ h1 {
 p.main {
     text-align: center;
 }
+	
+var profileImage = document.getElementById('profileImage');
+
+profileImage.addEventListener('mouseover', function mouseover(event) {
+	largeImg(event.target);
+}, false);
+
+profileImage.addEventListener('mouseout', function mouseout(event) {
+	normalImg(event.target);
+}, false);
+
+function largeImg(element) {
+	element.style.width = "700px";
+}
+
+function normalImg(element) {
+	element.style.width = "304px";
+}
 
 </style>
 </head>
@@ -61,26 +79,6 @@ window.addEventListener('load', function load(event) {
       tr:hover {background-color: #33FFD0}
 
     </style>
-	
-<script>
-var profileImage = document.getElementById('profileImage');
-
-profileImage.addEventListener('mouseover', function mouseover(event) {
-	largeImg(event.target);
-}, false);
-
-profileImage.addEventListener('mouseout', function mouseout(event) {
-	normalImg(event.target);
-}, false);
-
-function largeImg(element) {
-	element.style.width = "612px";
-}
-
-function normalImg(element) {
-	element.style.width = "304px";
-}
-</script>
     
 <!-- Table starts here-->
     <div style ="overflow-x:auto;">
