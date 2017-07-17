@@ -19,6 +19,24 @@ p.main {
 window.addEventListener('load', function load(event) {
     alert('Welcome to my profile page!');
 },false);
+    
+var profileImage = document.getElementById('profileImage');
+
+profileImage.addEventListener('mouseover', function mouseover(event) {
+	largeImg(event.target);
+}, false);
+
+profileImage.addEventListener('mouseout', function mouseout(event) {
+	normalImg(event.target);
+}, false);
+
+function largeImg(element) {
+	element.style.width = "612px";
+}
+
+function normalImg(element) {
+	element.style.width = "304px";
+}
 </script>
 
 <h1>Tina Tran</h1>
