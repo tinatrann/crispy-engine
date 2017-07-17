@@ -34,26 +34,6 @@ window.addEventListener('load', function load(event) {
 <img src="http://www.myotonic.org/sites/default/files/Airplane.jpg" img alt="Airplane" style="width:304px;height:228px;">
 <img src="http://img.huffingtonpost.com/asset/scalefit_720_noupscale/5730a8261300001a01380fe3.jpeg" img alt="Canoe" style="width:304px;height:228px;">
 <hr>
-  
-<script>
-var profileImage = document.getElementById('profileImage');
-
-profileImage.addEventListener('mouseover', function mouseover(event) {
-	largeImg(event.target);
-}, false);
-
-profileImage.addEventListener('mouseout', function mouseout(event) {
-	normalImg(event.target);
-}, false);
-
-function largeImg(element) {
-	element.style.width = "612px";
-}
-
-function normalImg(element) {
-	element.style.width = "304px";
-}
-</script>
 	
 <h3>Links<h/3>
 <p><a href="https://scratch.mit.edu/projects/166858879/">My Scratch soccer game.</a></p>
@@ -81,6 +61,26 @@ function normalImg(element) {
       tr:hover {background-color: #33FFD0}
 
     </style>
+	
+<script>
+var profileImage = document.getElementById('profileImage');
+
+profileImage.addEventListener('mouseover', function mouseover(event) {
+	largeImg(event.target);
+}, false);
+
+profileImage.addEventListener('mouseout', function mouseout(event) {
+	normalImg(event.target);
+}, false);
+
+function largeImg(element) {
+	element.style.width = "612px";
+}
+
+function normalImg(element) {
+	element.style.width = "304px";
+}
+</script>
     
 <!-- Table starts here-->
     <div style ="overflow-x:auto;">
