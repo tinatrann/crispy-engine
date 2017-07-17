@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <html> 
 <title>Tina's Profile Page</title>
-<head>
-<style>
-h1 {
-    text-align: center;
-}
-p.main {
-    text-align: center;
-}
-	
+<script
 var profileImage = document.getElementById('profileImage');
 
 profileImage.addEventListener('mouseover', function mouseover(event) {
@@ -21,13 +13,24 @@ profileImage.addEventListener('mouseout', function mouseout(event) {
 }, false);
 
 function largeImg(element) {
-	element.style.width = "700px";
+	element.style.width = "400px";
 }
 
 function normalImg(element) {
-	element.style.width = "304px";
+	element.style.width = "100px";
 }
 
+</script>
+
+<head>
+<style>
+h1 {
+    text-align: center;
+}
+p.main {
+    text-align: center;
+}
+	
 </style>
 </head>
   
